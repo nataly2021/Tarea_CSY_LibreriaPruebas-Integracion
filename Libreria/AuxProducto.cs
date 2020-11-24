@@ -10,7 +10,13 @@ namespace Libreria
 {
     public class AuxProducto
     {
-        private List<Producto> DatosProductos ;
+        //private List<Producto> DatosProductos ;
+
+       private List<Producto> DatosProductos = new List<Producto>();
+       
+      
+
+
 
         /// <summary>
         /// Agrega un nuevo rpoducto siempre y cuando no esté repetido
@@ -29,6 +35,7 @@ namespace Libreria
             return res;
         }
 
+        
         /// <summary>
         /// Agrega un nuevo producto a partir de los valores de los parámetros 
         /// siempre y cuando no esté repetido
@@ -124,7 +131,7 @@ namespace Libreria
         /// </summary>
         /// <param name="idProducto">El id del producto a buscar</param>
         /// <returns>El producto si lo encuentra, sino null</returns>
-        private Producto Buscar(int idProducto)
+        public Producto Buscar(int idProducto)
         {
             Producto encontrado = null;
 
