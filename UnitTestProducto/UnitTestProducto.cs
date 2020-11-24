@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Libreria;
 
+
 namespace UnitTestProducto
 {
     [TestClass]
@@ -32,11 +33,33 @@ namespace UnitTestProducto
         }
 
 
-        //
+        // Metodo Agregar Producto 
 
-        
+        [TestMethod]
+        public void TestAgregarProducto()
+        {
+            //Arrange
+            AuxProducto auxProducto = new AuxProducto();
+            int resultadoEsperado = 1;
+            int resultadoObtenido = 0;
+            Producto producto = new Producto();
+            producto.IdProducto = 1;
+            producto.Nombre = "Libro";
+            producto.Precio = 300;
+            producto.Stock = 2;
+            producto.Estado = true;
+
+            //Act
+            resultadoObtenido = AuxProducto.AgregarProducto(producto);
+
+            //Assert 
+            Assert.Equal(resultadoEsperado, resultadoObtenido);
 
         }
+
+
+
+
 
 
     }
