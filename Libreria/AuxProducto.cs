@@ -8,7 +8,7 @@ namespace Libreria
 {
     public class AuxProducto
     {
-        private List<Producto> DatosProductos;
+        private List<Producto> DatosProductos ;
 
         /// <summary>
         /// Agrega un nuevo rpoducto siempre y cuando no esté repetido
