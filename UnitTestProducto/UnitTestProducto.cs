@@ -47,17 +47,17 @@ namespace UnitTestProducto
 
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
-            categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Idcategoria = 2;
+            categoria.Nombre = "Comestica";
+            categoria.Descripcion = "Maquillaje";
 
 
             Producto producto = new Producto();
 
             producto.IdProducto = 1;
-            producto.Nombre = "Libro";
-            producto.Precio = 300;
-            producto.Stock = 2;
+            producto.Nombre = "Labial MAC orange";
+            producto.Precio = 12990;
+            producto.Stock = 20;
             producto.Estado = true;
             producto.Cat = categoria;
 
@@ -91,15 +91,15 @@ namespace UnitTestProducto
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
             categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Nombre = "Cabello";
+            categoria.Descripcion = "Shampoo y Balsamo";
 
 
             Producto producto = new Producto();
             producto.IdProducto = 1;
-            producto.Nombre = "Libro";
-            producto.Precio = 300;
-            producto.Stock = 2;
+            producto.Nombre = "Natura Balsamo ";
+            producto.Precio = 20000;
+            producto.Stock = 4;
             producto.Estado = true;
             producto.Cat = categoria;
 
@@ -126,14 +126,14 @@ namespace UnitTestProducto
 
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
-            categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Idcategoria = 2;
+            categoria.Nombre = "Rostro";
+            categoria.Descripcion = "Cuidado Facial";
 
 
-            producto.Nombre = "Libro";
-            producto.Precio = 300;
-            producto.Stock = 2;
+            producto.Nombre = "Mascarillas de Aloe";
+            producto.Precio = 1500;
+            producto.Stock = 10;
             producto.Estado = true;
             producto.Cat = categoria;
 
@@ -154,16 +154,16 @@ namespace UnitTestProducto
         {
             //Arrange
             AuxProducto auxProducto = new AuxProducto();
-            int resultadoEsperado = 1;
-            int resultadoObtenido = 0;
+            int resultadoEsperado = 0;
+            int resultadoObtenido = 1;
             Producto producto = new Producto();
             producto.IdProducto = 1;
 
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
-            categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Idcategoria = 2;
+            categoria.Nombre = "Rostro";
+            categoria.Descripcion = "Cuidado Facial";
 
 
             producto.Precio = 300;
@@ -191,13 +191,13 @@ namespace UnitTestProducto
             int resultadoObtenido = 0;
             Producto producto = new Producto();
             producto.IdProducto = 1;
-            producto.Nombre = "Libro";
+            producto.Nombre = "Balsamo fragacia a Canela";
 
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
-            categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Idcategoria = 2;
+            categoria.Nombre = "Rostro";
+            categoria.Descripcion = "Cuidado Facial";
 
 
             producto.Stock = 2;
@@ -223,15 +223,15 @@ namespace UnitTestProducto
             int resultadoEsperado = 1;
             int resultadoObtenido = 0;
             Producto producto = new Producto();
-            producto.IdProducto = 1;
-            producto.Nombre = "Libro";
-            producto.Precio = 2000;
+            producto.IdProducto = 3;
+            producto.Nombre = "Mascara de pestañas Maybelline";
+            producto.Precio = 7000;
 
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
-            categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Idcategoria = 4;
+            categoria.Nombre = "Maquillaje";
+            categoria.Descripcion = " Maquillaje facial";
 
 
             producto.Estado = true;
@@ -257,14 +257,14 @@ namespace UnitTestProducto
             int resultadoObtenido = 0;
             Producto producto = new Producto();
             producto.IdProducto = 1;
-            producto.Nombre = "Libro";
-            producto.Precio = 2000;
+            producto.Nombre = "Shampoo Flowers ";
+            producto.Precio = 11000;
 
             ////Asignacion de datos a la categoria y al producto
             Categoria categoria = new Categoria();
             categoria.Idcategoria = 1;
-            categoria.Nombre = "Infantil";
-            categoria.Descripcion = "Libros infantiles";
+            categoria.Nombre = "Cabello";
+            categoria.Descripcion = "shampoo y balsamos";
 
             producto.Cat = categoria;
 
@@ -287,9 +287,9 @@ namespace UnitTestProducto
             int resultadoEsperado = 1;
             int resultadoObtenido = 0;
             Producto producto = new Producto();
-            producto.IdProducto = 1;
-            producto.Nombre = "Libro";
-            producto.Precio = 2000;
+            producto.IdProducto = 7;
+            producto.Nombre = "Labial rose";
+            producto.Precio = 6900;
             producto.Estado = true;
 
 

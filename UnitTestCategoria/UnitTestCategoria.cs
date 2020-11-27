@@ -280,7 +280,7 @@ namespace UnitTestCategoria
             AuxCategoria auxCategoria = new AuxCategoria();
             int idCategoriaNoExistente = 99;
 
-            int? resultadoEsperado = 0;
+            int resultadoEsperado = 0;
             int resultadoObtenido = 0;
 
 
