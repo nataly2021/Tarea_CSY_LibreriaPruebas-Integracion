@@ -295,6 +295,34 @@ namespace UnitTestCategoria
 
 
 
+        ///  El metodo  de buscar se encuentra en privado , por cual  categoria no se puede realizar pruebas. 
+        ///  
+        //[TestMethod]
+        //public void TestBuscarCategoriaPorId()
+        //{
+        //    //Arrange Buscar
+        //    AuxCategoria auxCategoria = new AuxCategoria();
+        //    int idCategoriaExistente = 1;
+
+        //    int resultadoEsperado = 1;
+        //    int resultadoObtenido = 0;
+
+
+        //    //ACT
+        //    resultadoObtenido = auxCategoria.Buscar(idCategoriaExistente);
+
+        //    //Assert
+        //    Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+
+
+        //
+
+
         ///  faltan metodos de buscar categoria 
+
+
+
+
+
     }
 }
