@@ -72,6 +72,7 @@ namespace Libreria
             if(p!=null)
             {
                 p.Estado = false;
+                //res = 1;
             }
 
             return res;

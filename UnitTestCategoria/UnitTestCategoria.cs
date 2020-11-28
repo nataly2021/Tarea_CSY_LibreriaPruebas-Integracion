@@ -9,7 +9,7 @@ namespace UnitTestCategoria
     public class UnitTestAuxCategoria
     {
 
-
+        #region Pruebas a Agregar Categoria
         // Prueba de Agregar una Categoria enviando por parametro un objeto Categoria
         [TestMethod]
         public void TestAgregarCategoriaComoObjeto()
@@ -127,8 +127,11 @@ namespace UnitTestCategoria
 
 
         }
+        #endregion Pruebas a Agregar Categoria
+
 
         // Prueba Fallida 
+        #region pruebas a Modificar Categoria
         [TestMethod]
         public void TestModificarCategoriaComoObjeto()
         {
@@ -241,10 +244,10 @@ namespace UnitTestCategoria
             Assert.AreEqual(resultadoEsperado, resultadoObtenido);
 
         }
-
+        #endregion pruebas a Modificar Categoria
 
         //Prueba Eliminar una categoria, enviando por parametro un id existente
-
+        #region eliminar categoria
         [TestMethod]
         public void TestEliminarCategoriaConIdExistente()
         {
@@ -269,7 +272,7 @@ namespace UnitTestCategoria
             Assert.AreEqual(resultadoEsperado, resultadoObtenido);
 
         }
-
+        #endregion eliminar categoria
 
         //Prueba Eliminar una categoria, enviando por parametro un id no existente
 
@@ -295,34 +298,7 @@ namespace UnitTestCategoria
 
 
 
-        ///  El metodo  de buscar se encuentra en privado , por cual  categoria no se puede realizar pruebas. 
-        ///  
-        //[TestMethod]
-        //public void TestBuscarCategoriaPorId()
-        //{
-        //    //Arrange Buscar
-        //    AuxCategoria auxCategoria = new AuxCategoria();
-        //    int idCategoriaExistente = 1;
-
-        //    int resultadoEsperado = 1;
-        //    int resultadoObtenido = 0;
-
-
-        //    //ACT
-        //    resultadoObtenido = auxCategoria.Buscar(idCategoriaExistente);
-
-        //    //Assert
-        //    Assert.AreEqual(resultadoEsperado, resultadoObtenido);
-
-
-        //
-
-
-        ///  faltan metodos de buscar categoria 
-
-
-
-
+        
 
     }
 }

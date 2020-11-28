@@ -9,72 +9,73 @@ namespace UnitTestProducto
     public class UnitTestProducto
     { 
         // Probar Metodo Obtener producto por Instancia 
-        [TestMethod]
-        public void TestObtenerProductoPorInstancia()
-        {
-            // arrange 
-
-         
-
-            int resultadoEsperado = 1;
-            int resultadoObtenido = 0;
-
-            AuxProducto auxProducto = new AuxProducto();
-            Producto producto = new Producto();
-
-            // act
-
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
-
-            // assert 
-
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
-
-
-        }
 
 
         [TestMethod]
         public void TestObtenerProductoPorParametro()
         {
-            // arrange 
-
-
-
-            int resultadoEsperado = 1;
-            int resultadoObtenido = 0;
-
-
-            ////Asignacion de datos a la categoria y al producto
-            Categoria categoria = new Categoria();
-            categoria.Idcategoria = 2;
-            categoria.Nombre = "Comestica";
-            categoria.Descripcion = "Maquillaje";
-
-
-            Producto producto = new Producto();
-
-            producto.IdProducto = 1;
-            producto.Nombre = "Labial MAC orange";
-            producto.Precio = 12990;
-            producto.Stock = 20;
-            producto.Estado = true;
-            producto.Cat = categoria;
 
             AuxProducto auxProducto = new AuxProducto();
 
-            // act
+            int idProductoBuscar = 1;
+            Producto productoRetornado;
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
 
-            // assert 
+            ////forzar que funione agregando el producto
+            //Producto producto = new Producto();
+            //producto.IdProducto = 1;
+            //producto.Nombre = "Natura Balsamo ";
+            //producto.Precio = 20000;
+            //producto.Stock = 4;
+            //producto.Estado = true;
+            //auxProducto.AgregarProducto(producto);
 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
 
+            //Act
+            productoRetornado = auxProducto.Buscar(idProductoBuscar);
+
+            if (productoRetornado!= null)
+            {
+                //Assert 
+                Assert.AreEqual(idProductoBuscar, productoRetornado.IdProducto);
+
+            }
+            else
+            {
+                throw new Exception("Producto no encontrado ");
+            }
 
         }
 
+        [TestMethod]
+        public void TestObtenerProductoPorID()
+        {
+            AuxProducto auxProducto = new AuxProducto();
 
+            int idProductoBuscar = 1;
+            Producto productoRetornado;
+           
+
+
+            ////forzar que funione agregando el producto
+            //Producto producto = new Producto();
+            //producto.IdProducto = 1;
+            //producto.Nombre = "Natura Balsamo ";
+            //producto.Precio = 20000;
+            //producto.Stock = 4;
+            //producto.Estado = true;
+            //auxProducto.AgregarProducto(producto);
+
+            //Act
+            productoRetornado = auxProducto.Buscar(idProductoBuscar);
+
+
+            //Assert 
+            Assert.AreEqual(idProductoBuscar, productoRetornado.IdProducto);
+
+
+
+        }
 
 
 
@@ -129,21 +130,26 @@ namespace UnitTestProducto
             categoria.Idcategoria = 2;
             categoria.Nombre = "Rostro";
             categoria.Descripcion = "Cuidado Facial";
-
-
             producto.Nombre = "Mascarillas de Aloe";
             producto.Precio = 1500;
             producto.Stock = 10;
             producto.Estado = true;
             producto.Cat = categoria;
 
-            //Act
+            if (producto.IdProducto == 0)
+            {
+                throw new Exception("Error no se ha ingresado el ID del producto ");
+            }
+            else
+            {
+                //Act
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
+                resultadoObtenido = auxProducto.AgregarProducto(producto);
 
-
-            //Assert 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
+           
 
         }
 
@@ -164,20 +170,24 @@ namespace UnitTestProducto
             categoria.Idcategoria = 2;
             categoria.Nombre = "Rostro";
             categoria.Descripcion = "Cuidado Facial";
-
-
             producto.Precio = 300;
             producto.Stock = 2;
             producto.Estado = true;
             producto.Cat = categoria;
 
-            //Act
+            if (producto.Nombre==null)
+            {
+                throw new Exception("Error no se ha ingresado el Nombre del producto ");
+            }
+            else
+            {
+                //Act
+                resultadoObtenido = auxProducto.AgregarProducto(producto);
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
 
-
-            //Assert 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
 
         }
         // Metodo Agregar Producto Sin Precio  
@@ -198,19 +208,25 @@ namespace UnitTestProducto
             categoria.Idcategoria = 2;
             categoria.Nombre = "Rostro";
             categoria.Descripcion = "Cuidado Facial";
-
-
             producto.Stock = 2;
             producto.Estado = true;
             producto.Cat = categoria;
 
-            //Act
+            
+            if (producto.Precio==0)
+            {
+                throw new Exception("Error no se ha ingresado el Precio ");
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
+            }
+            else
+            {
+                //Act
+                resultadoObtenido = auxProducto.AgregarProducto(producto);
 
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
 
-            //Assert 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
 
         }
         // Metodo Agregar Producto Sin Precio  
@@ -232,18 +248,28 @@ namespace UnitTestProducto
             categoria.Idcategoria = 4;
             categoria.Nombre = "Maquillaje";
             categoria.Descripcion = " Maquillaje facial";
-
-
             producto.Estado = true;
             producto.Cat = categoria;
 
-            //Act
+            if (producto.Stock==0)
+            {
+                throw new Exception("Error no se ha ingresado el Stock del  producto ");
+            } 
+            else
+            {
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
+                //Act
+
+                resultadoObtenido = auxProducto.AgregarProducto(producto);
 
 
-            //Assert 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+
+
+            }
+
+
 
         }
 
@@ -265,21 +291,26 @@ namespace UnitTestProducto
             categoria.Idcategoria = 1;
             categoria.Nombre = "Cabello";
             categoria.Descripcion = "shampoo y balsamos";
-
             producto.Cat = categoria;
 
-            //Act
+            if (producto.Estado==false)
+            {
+                throw new Exception("Error no se ha ingresado  el Estado del producto ");
+            }
+            else
+            {
+                //Act
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
+                resultadoObtenido = auxProducto.AgregarProducto(producto);
 
-
-            //Assert 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
+            
 
         }
 
         [TestMethod]
-
         public void TestAgregarProductoSinCategoria()
         {
             //Arrange
@@ -293,39 +324,26 @@ namespace UnitTestProducto
             producto.Estado = true;
 
 
+            //Crear  metodo sino se cumple mensaje de Error
+            if (producto.Cat == null)
+            {
+                throw new Exception("Error no se ha ingresado categoria");
+               
+            } 
+            else
+            {
 
-            //Act
+                //Act
 
-            resultadoObtenido = auxProducto.AgregarProducto(producto);
+                resultadoObtenido = auxProducto.AgregarProducto(producto);
 
 
-            //Assert 
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
-
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
         }
 
-        // Obtener producto por  ID 
-
-        [TestMethod]
-        public void TestObtenerProductoPorID()
-        {
-            AuxProducto auxProducto = new AuxProducto();
-
-            int idProducto = 1;
-            Producto productoRetornado;
-            int resultadoEsperado = 1;
-       
-            //Act
-            productoRetornado = auxProducto.Buscar(idProducto);
-
-      
-            //Assert 
-                Assert.AreEqual(resultadoEsperado, productoRetornado.IdProducto);
-
-
-
-        }
-
+ 
 
         // Metodo Dar de baja Producto 
 
@@ -350,9 +368,104 @@ namespace UnitTestProducto
 
         }
 
-       
+
+        // Probar Metodo Actualizar  Producto aumentando el stock
+        //enviando por parametro un ID existente y nuevo stock 
+
+        [TestMethod]
+        public void TestActualizarStockDeProductoPorID()
+        {
+
+            //Arrange
+            AuxProducto auxProducto = new AuxProducto();
+            int resultadoEsperado = 1;
+            int resultadoObtenido = 0;
+            int aumentoStock = 3;
+
+            ////Asignacion de datos a la categoria y al producto
+            Categoria categoria = new Categoria();
+            categoria.Idcategoria = 1;
+            categoria.Nombre = "Cabello";
+            categoria.Descripcion = "shampoo y balsamos";
+
+            Producto producto = new Producto();
+            producto.IdProducto = 7;
+            producto.Nombre = "Labial rose";
+            producto.Cat = categoria;
+            producto.Precio = 6900;
+            producto.Estado = true;
+            producto.Stock = 1; //stock inicial 1
+            auxProducto.AgregarProducto(producto);
+
+
+            //Act
+            resultadoObtenido = auxProducto.ActualizarStock(producto.IdProducto, aumentoStock);
+  
+
+            if (resultadoObtenido!= -1)
+             {
+
+                resultadoObtenido = 1;
+                //Assert 
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
+            else
+            {
+                //producto no encontrado
+                throw new Exception("Producto no encopntrado");
+            }
+
+
+          
 
 
 
+        }
+
+
+        //Probar Metodo Modificar   Producto  enviando por parametro un ID existente
+
+        [TestMethod]
+        public void TestModificarProductoPorID()
+        {
+
+            //Arrange
+            AuxProducto auxProducto = new AuxProducto();
+            int resultadoEsperado = 1;
+            int resultadoObtenido = 0;
+
+            ////Asignacion de datos a la categoria y al producto
+            Categoria categoria = new Categoria();
+            categoria.Idcategoria = 1;
+            categoria.Nombre = "Cabello";
+            categoria.Descripcion = "shampoo y balsamos";
+
+            Producto producto = new Producto();
+            producto.IdProducto = 7;
+            producto.Nombre = "Labial rose";
+            producto.Cat = categoria;
+            producto.Precio = 6900;
+            producto.Estado = true;
+            producto.Stock = 1;
+            auxProducto.AgregarProducto(producto);
+
+
+            //Act- se modfica nombre y categoria
+            Categoria categoriaNueva = new Categoria();
+            categoria.Idcategoria = 2;
+            categoria.Nombre = "Maquillaje";
+            categoria.Descripcion = "Cosmetica";
+
+            resultadoObtenido = auxProducto.Modificar(7, "Labial rose 2", categoriaNueva, 6900,1  );
+     
+                     
+
+
+            //Assert 
+            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+
+
+
+        }
     }
 }

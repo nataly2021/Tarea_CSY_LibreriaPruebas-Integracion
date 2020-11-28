@@ -10,9 +10,9 @@ namespace Libreria
 {
     public class AuxCategoria
     {
-        //private List<Categoria> DatosCategorias; 
+       // private List<Categoria> DatosCategorias; 
 
-        private List<Categoria> DatosCategorias = new List<Categoria>();
+       private List<Categoria> DatosCategorias = new List<Categoria>();
 
 
         /// <summary>
