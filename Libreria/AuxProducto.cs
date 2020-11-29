@@ -10,7 +10,7 @@ namespace Libreria
 {
     public class AuxProducto
     {
-       //private List<Producto> DatosProductos ;
+       // private List<Producto> DatosProductos ;
 
        private List<Producto> DatosProductos = new List<Producto>();
        

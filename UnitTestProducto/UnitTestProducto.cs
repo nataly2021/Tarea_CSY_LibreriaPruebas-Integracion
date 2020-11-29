@@ -8,7 +8,7 @@ namespace UnitTestProducto
     [TestClass]
     public class UnitTestProducto
     { 
-        // Probar Metodo Obtener producto por Instancia 
+        // Probar Metodo Obtener producto por parameto
 
 
         [TestMethod]
@@ -22,13 +22,13 @@ namespace UnitTestProducto
 
 
             ////forzar que funione agregando el producto
-            //Producto producto = new Producto();
-            //producto.IdProducto = 1;
-            //producto.Nombre = "Natura Balsamo ";
-            //producto.Precio = 20000;
-            //producto.Stock = 4;
-            //producto.Estado = true;
-            //auxProducto.AgregarProducto(producto);
+            Producto producto = new Producto();
+            producto.IdProducto = 1;
+            producto.Nombre = "Natura Balsamo ";
+            producto.Precio = 20000;
+            producto.Stock = 4;
+            producto.Estado = true;
+            auxProducto.AgregarProducto(producto);
 
 
             //Act
@@ -54,17 +54,17 @@ namespace UnitTestProducto
 
             int idProductoBuscar = 1;
             Producto productoRetornado;
-           
 
 
-            ////forzar que funione agregando el producto
-            //Producto producto = new Producto();
-            //producto.IdProducto = 1;
-            //producto.Nombre = "Natura Balsamo ";
-            //producto.Precio = 20000;
-            //producto.Stock = 4;
-            //producto.Estado = true;
-            //auxProducto.AgregarProducto(producto);
+
+            //forzar que funione agregando el producto
+            Producto producto = new Producto();
+            producto.IdProducto = 1;
+            producto.Nombre = "Natura Balsamo ";
+            producto.Precio = 20000;
+            producto.Stock = 4;
+            producto.Estado = true;
+            auxProducto.AgregarProducto(producto);
 
             //Act
             productoRetornado = auxProducto.Buscar(idProductoBuscar);
