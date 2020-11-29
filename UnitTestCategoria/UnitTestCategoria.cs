@@ -72,11 +72,20 @@ namespace UnitTestCategoria
             int resultadoEsperado = 1;
             int resultadoObtenido = 0;
 
-            //ACT
-            resultadoObtenido = auxCategoria.Agregar(categoria);
+            if (categoria.Nombre==null)
+            {
+                throw new Exception("Error no se ha ingresado el Nombre de Categoria");
+            }
+            else
+            {
+                //ACT
+                resultadoObtenido = auxCategoria.Agregar(categoria);
 
-            //Assert
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+                //Assert
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+
+            }
+           
 
         }
 
@@ -96,11 +105,19 @@ namespace UnitTestCategoria
             int resultadoEsperado = 1;
             int resultadoObtenido = 0;
 
-            //ACT
-            resultadoObtenido = auxCategoria.Agregar(categoria);
+            if (categoria.Descripcion==null)
+            {
+                throw new Exception("Error no se ha ingresado la Descripción de Categoria");
+            }
+            else
+            {
+                //ACT
+                resultadoObtenido = auxCategoria.Agregar(categoria);
 
-            //Assert
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+                //Assert
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
+           
 
         }
 
@@ -119,11 +136,19 @@ namespace UnitTestCategoria
             int resultadoEsperado = 1;
             int resultadoObtenido = 0;
 
-            //ACT
-            resultadoObtenido = auxCategoria.Agregar(categoria);
+            if (categoria.Idcategoria == 0)
+            {
+                throw new Exception("Error no se ha ingresado la ID de Categoria");
+            }
+            else
+            {
+                //ACT
+                resultadoObtenido = auxCategoria.Agregar(categoria);
 
-            //Assert
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+                //Assert
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
+           
 
 
         }
@@ -281,17 +306,28 @@ namespace UnitTestCategoria
         {
             //Arrange Eliminar
             AuxCategoria auxCategoria = new AuxCategoria();
-            int idCategoriaNoExistente = 99;
+            //int idCategoriaNoExistente = 99;
+            Categoria categoria = new Categoria();
+            categoria.Idcategoria = 1;
 
-            int resultadoEsperado = 0;
+            int resultadoEsperado = 1;
             int resultadoObtenido = 0;
 
+            if (categoria.Idcategoria==0)
+            {
+                throw new Exception("Error  no Existe el  ID de Categoria");
+            }
+            else
+            {
+                //ACT
+                resultadoObtenido = auxCategoria.Eliminar(categoria.Idcategoria);
 
-            //ACT
-            resultadoObtenido = auxCategoria.Eliminar(idCategoriaNoExistente);
+                //Assert
+                Assert.AreEqual(resultadoEsperado, resultadoObtenido);
 
-            //Assert
-            Assert.AreEqual(resultadoEsperado, resultadoObtenido);
+            }
+
+           
 
 
         }
